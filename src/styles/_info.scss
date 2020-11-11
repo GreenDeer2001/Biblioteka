@@ -1,0 +1,107 @@
+.info-section {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  @include removePadding;
+}
+
+.quickLinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.quickLink {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 150px;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  color: white;
+
+  &__title {
+    font-size: 1.25rem;
+  }
+  &__icon {
+    font-size: 3rem;
+    display: block;
+    padding: 1rem 0;
+    color: black;
+    opacity: 0.8;
+    mix-blend-mode: color;
+  }
+  &__description {
+    display: none;
+  }
+  &-link {
+    list-style: none;
+    text-decoration: none;
+  }
+}
+
+.info__post {
+  height: 400px;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  &-center {
+    padding: 1rem;
+    height: 100%;
+    background-color: #fefefe;
+  }
+  &-title {
+    font-size: 2rem;
+    padding: 0.5rem;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #222;
+    text-transform: capitalize;
+  }
+  &-text {
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}
+
+@media screen and (min-width: $desktop-size) {
+  .info-section {
+    padding: 1.5rem;
+    @include removePadding;
+  }
+  .quickLinks {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .quickLink {
+    padding: 1.5rem 0.5rem;
+    grid-row-start: auto 1fr auto;
+    height: 250px;
+  }
+  .quickLink__description {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .info-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem 1.5rem;
+  }
+  .quickLink {
+    grid-row-start: auto 1fr auto;
+    height: 400px;
+    &__icon {
+      align-self: center;
+      font-size: 4rem;
+    }
+  }
+  .info__post-center {
+    border: 2px solid $color-main;
+    border-radius: 0.5rem;
+  }
+}

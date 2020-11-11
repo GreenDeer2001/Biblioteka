@@ -1,0 +1,80 @@
+.book {
+  &__center {
+    max-width: $max-width;
+    margin: 0 auto;
+    margin-top: 6rem;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    &-container {
+      overflow: hidden;
+      width: 100%;
+      max-width: 400px;
+      max-height: 550px;
+    }
+  }
+  &__info {
+    padding: 1rem;
+    margin-top: 1.5rem;
+
+    &-title {
+      font-size: 1.75rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid $color-main;
+    }
+
+    &-category {
+      margin: 1rem 0 1.5rem 0;
+    }
+    &-text {
+      font-size: 1.25rem;
+      line-height: 2rem;
+    }
+  }
+  &__reservation {
+    padding: 1rem;
+
+    &-available {
+      & svg {
+        vertical-align: middle;
+      }
+    }
+    &-btn {
+      @include btn;
+      display: block;
+      width: 100%;
+      margin: 1rem auto;
+      padding: 0.75rem;
+      font-size: 1.25rem;
+      font-family: inherit;
+      border-radius: 1rem;
+      background-color: $color-main;
+      color: white;
+      transition: all 0.3s;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-size) {
+  .book {
+    &__center {
+      margin-top: 8rem;
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      column-gap: 2rem;
+    }
+    &__info-text {
+      padding-right: 6rem;
+      line-height: 1.75rem;
+    }
+
+    &__reservation {
+      padding: 0;
+    }
+  }
+}

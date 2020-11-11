@@ -1,0 +1,50 @@
+$max-width: 1300px;
+$desktop-size: 882px;
+
+$color-main: rgb(0, 53, 66);
+
+$font: "Roboto", sans-serif;
+
+a,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+option {
+  font-family: $font;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
+
+@mixin btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+@mixin icon {
+  background-color: transparent;
+  border: none;
+  vertical-align: middle;
+  color: white;
+}
+
+@mixin removePadding {
+  @media screen and (min-width: $max-width) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
