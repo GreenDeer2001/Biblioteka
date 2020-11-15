@@ -13,6 +13,8 @@ const Contact = () => {
         const telF = tel.current.value;
         const textF = text.current.value;
         console.log(titleF,emailF,telF,textF)
+
+        document.getElementById("form").reset();
     }
   return (
     <section className="section">

@@ -3,6 +3,8 @@
     max-width: $max-width;
     margin: 0 auto;
     margin-top: 6rem;
+    padding-left: 1rem;
+    @include removePadding;
   }
   &__img {
     width: 100%;

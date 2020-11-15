@@ -35,6 +35,54 @@ a {
   border: none;
 }
 
+@mixin backdrop{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+@mixin modal{
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: aliceblue;
+  &__header {
+    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3);
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    &-title {
+      text-transform: uppercase;
+    }
+    &-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      vertical-align: bottom;
+    }
+
+}
+@media screen and(min-width:$desktop-size) {
+ 
+    max-height: 500px;
+    border-radius: 0.5rem;
+
+    &__header {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    
+  }
+}
+}
+
 @mixin icon {
   background-color: transparent;
   border: none;

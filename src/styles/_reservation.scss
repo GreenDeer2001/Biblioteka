@@ -1,0 +1,32 @@
+.backdrop {
+    @include backdrop;
+    }
+
+    .reservation{
+        @include modal;
+
+        &__info{
+            padding: 2rem;
+            font-size: 1.75rem;
+            height: 100%;
+            display: grid;
+            grid-template-rows: 1fr auto;
+            &-btn{
+                @include btn;
+                font-size: 1.5rem;
+                width: 80%;
+                margin: 0 auto;
+                margin-bottom: 2rem;
+                text-align: center;
+                text-transform: uppercase;
+                color: white;
+                background-color: $color_main;
+                padding: 0.75rem 2rem;
+                border-radius: 0.5rem;
+                transition: all 300ms ;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+    }

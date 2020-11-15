@@ -6,12 +6,12 @@ import regulations from "./dummy.pdf";
 export const Links = [
   {
     id: 0,
-    title: "Wydarzenia",
+    title: "Nowości",
     icon: <MdEvent />,
     description:
-      "Najbliższe wydarzenia dla każdej grupy wiekowej w naszej bibliotece",
+      "Najnowsze wiadomości z naszej biblioteki.",
     bgColor: "#33cccc",
-    url: "/aktualności",
+    url: "/",
   },
   {
     id: 1,

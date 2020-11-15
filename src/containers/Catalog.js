@@ -1,14 +1,20 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useBooksContext } from "../utilities/context";
 import { MdDone } from "react-icons/md";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Catalog = () => {
-  const books = useBooksContext().booksToDIsplay;
+  const {booksToDisplay : books,loading} = useBooksContext();
   const [booksToDisplay, setBooksToDisplay] = React.useState(books);
   const searchValue = React.useRef();
 
+
+  useEffect(() => {
+    setBooksToDisplay(books)    
+  }, [books])
+
+ 
   const searchHandler = () => {
     const value = searchValue.current.value.toUpperCase();
 
@@ -28,12 +34,15 @@ const Catalog = () => {
       sortedBooks = sortedBooks.sort((a) => (a.isRent ? 1 : -1));
     } else if (e === "POP") {
       sortedBooks = sortedBooks.sort((a, b) =>
-        a.history.length <= b.history.length ? 1 : -1
+        a.popularity <= b.popularity ? 1 : -1
       );
     }
     setBooksToDisplay(sortedBooks);
   };
 
+  if(loading){
+    return (<div>Loading</div>)
+  }
   return (
     <section className="section catalog">
       <div className="catalog-center">
@@ -61,7 +70,7 @@ const Catalog = () => {
         </div>
         <div className="catalog__list">
           {booksToDisplay.map((item, index) => {
-            const { title, image, id, isRent, author } = item;
+            const { title, image, id, isBorrowed, author } = item;
             return (
               <article key={index} className="catalog__book">
                 <div className="catalog__book-imgContainer">
@@ -74,7 +83,7 @@ const Catalog = () => {
                     {" "}
                     Dostępna:{" "}
                     <span>
-                      {isRent ? (
+                      {isBorrowed ? (
                         <FaTimes className="red " />
                       ) : (
                         <MdDone className="green" />

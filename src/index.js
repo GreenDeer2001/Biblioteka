@@ -7,11 +7,11 @@ import {ContextProvider} from './utilities/context';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ContextProvider>
     <BrowserRouter>
+    <ContextProvider>
     <App />
-    </BrowserRouter>
     </ContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
