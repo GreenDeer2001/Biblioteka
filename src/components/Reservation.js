@@ -2,12 +2,11 @@ import React from "react";
 import { useBooksContext } from "../utilities/context";
 import { FaTimes } from "react-icons/fa";
 
-const Reservation = ({isBorrowed}) => {
+const Reservation = ({ isBorrowed }) => {
   const { showReservation, setShowReservation } = useBooksContext();
 
-
   const reservationHandler = () => {
-    setShowReservation(false)
+    setShowReservation(false);
   };
 
   if (showReservation) {

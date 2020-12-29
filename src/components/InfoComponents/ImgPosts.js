@@ -1,21 +1,22 @@
-import React from 'react'
-import {data} from '../../utilities/data/Posts';
-import {Link} from "react-router-dom";
+import React from "react";
+import { data } from "../../utilities/data/Posts";
+import { Link } from "react-router-dom";
 
 const ImgPosts = () => {
-  return data.map((item,index)=>{
-    if(item.type === "IMGPOST"){
-
-      const {title,url,image} = item;
-      return(
-        <Link to={url} key={index}> <article  className="info__post">
-              <img src={image} alt={title}/>
+  return data.map((item, index) => {
+    if (item.type === "IMGPOST") {
+      const { title, url, image } = item;
+      return (
+        <Link to={url} key={index}>
+          {" "}
+          <article className="info__post">
+            <img src={image} alt={title} />
           </article>
-          </Link>
-      )
+        </Link>
+      );
     }
-    return null
-    })
-}
+    return null;
+  });
+};
 
-export default ImgPosts
+export default ImgPosts;

@@ -38,4 +38,3 @@ var firebaseConfig = {
   
 
   export {db , auth};
-//   firebase.analytics();

@@ -51,9 +51,7 @@ const Navbar = () => {
             <NavLink to="/kontakt">Kontakt</NavLink>
           </li>
           <li className="navbar__link" onClick={goToProfilHandler}>
-            {/* <NavLink  to="/konto"> */}
             <span className={`${pathname==="/konto" && "profilPageActive" }`}> Konto </span>
-            {/* </NavLink> */}
           </li>
         </ul>
       </div>
