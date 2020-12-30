@@ -74,7 +74,7 @@ const Catalog = () => {
             return (
               <article key={index} className="catalog__book">
                 <div className="catalog__book-imgContainer">
-                  <img src={image} alt={title} />
+                  <img loading="lazy" src={image} alt={title} />
                 </div>
                 <div className="catalog__book__info">
                   <h4>{title}</h4>
