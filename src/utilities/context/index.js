@@ -53,8 +53,6 @@ const ContextProvider = ({ children }) => {
   );
 };
 
-const useBooksContext = () => {
-  return useContext(BooksContext);
-};
+const useBooksContext = () => useContext(BooksContext);
 
 export { BooksContext, ContextProvider, useBooksContext };

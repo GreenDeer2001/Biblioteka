@@ -10,7 +10,7 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
+  const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setLoading(false);
         setEmail(user.email);
@@ -20,6 +20,7 @@ const Profile = () => {
         setShowLoginForm(true);
       }
     });
+    return ()=>unsubscribe()
   });
 
   if (loading) {

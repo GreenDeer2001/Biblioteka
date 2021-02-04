@@ -1,10 +1,22 @@
-import React from "react";
+import {useState} from "react";
 import { useLocation } from "react-router";
 import { data } from "../utilities/data/Posts";
 
+const mapText = (text) => {
+  let mapedText = text.split("\n").map((str, index) => {
+    return (
+      <p className="post__info-text" key={index}>
+        {str}
+      </p>
+    );
+  });
+
+  return mapedText;
+};
+
 const PostDetails = () => {
   const { pathname } = useLocation();
-  const [post] = React.useState(data.find((item) => item.url === pathname));
+  const [post] = useState(data.find((item) => item.url === pathname));
 
   let image;
   if (post.image) {
@@ -25,18 +37,6 @@ const PostDetails = () => {
       </div>
     </section>
   );
-};
-
-const mapText = (text) => {
-  let mapedText = text.split("\n").map((str, index) => {
-    return (
-      <p className="post__info-text" key={index}>
-        {str}
-      </p>
-    );
-  });
-
-  return mapedText;
 };
 
 export default PostDetails;

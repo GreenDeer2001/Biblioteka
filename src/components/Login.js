@@ -44,16 +44,13 @@ const Login = () => {
           setloginError(true);
         });
     } else {
-      console.log(emailValue, passwordValue);
       auth
         .createUserWithEmailAndPassword(emailValue, passwordValue)
-        .then((user) => {
-          console.log(user);
+        .then(() => {
           setShowLoginForm(false);
           gotoAccount && history.push("/konto");
         })
         .catch((err) => {
-          console.log(err);
           if (err.code === "auth/email-already-in-use") {
             setEmailError(true);
           }

@@ -1,14 +1,12 @@
-import React from "react";
+import {useState,useEffect} from "react";
 import { data } from "../../utilities/data/Posts";
 import SingleNews from "./SingleNews";
 
 const News = () => {
-  const [current, setCurrent] = React.useState(1);
-  const [move, setMove] = React.useState(true);
-  const [posts] = React.useState(data.filter((i) => i.type === "NEWSPOST"));
+  const [current, setCurrent] = useState(1);
+  const [posts] = useState(data.filter((i) => i.type === "NEWSPOST"));
 
-  React.useEffect(() => {
-    if (move) {
+  useEffect(() => {
       const interval = setInterval(() => {
         let index = current + 1;
         index > posts.length - 1 && (index = 0);
@@ -17,15 +15,12 @@ const News = () => {
       return () => {
         clearInterval(interval);
       };
-    }
-  }, [current, move, posts]);
+  }, [current, posts]);
 
   return (
     <div className="news-section">
       <div
         className="news-section__center"
-        onMouseOver={() => setMove(false)}
-        onMouseOut={() => setMove(true)}
       >
         {posts.map((item, index) => {
           return (

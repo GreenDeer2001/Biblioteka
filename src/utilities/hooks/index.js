@@ -22,15 +22,19 @@ const useBooks = () => {
 const useSingleBook = (id) => {
   const [singleBook,setBook] = useState({});
 
-  db.collection("books")
+
+  useEffect(() => {
+    db.collection("books")
     .where("id", "==", id)
     .get()
     .then((book) => {
-      console.log(book.docs[0].data());
       setBook(book.docs[0].data());
     });
+  }, [id])
 
-    return {singleBook };
+ 
+
+    return [singleBook];
 }
 
 export { useBooks,useSingleBook };

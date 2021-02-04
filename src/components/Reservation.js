@@ -1,4 +1,3 @@
-import React from "react";
 import { useBooksContext } from "../utilities/context";
 import { FaTimes } from "react-icons/fa";
 

@@ -29,6 +29,7 @@ const Contact = () => {
             allowFullScreen=""
             aria-hidden="false"
             tabIndex="0"
+            loading="lazy"
           ></iframe>
         </div>
         <div className="contact-info-text">
